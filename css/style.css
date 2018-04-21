@@ -188,3 +188,14 @@ body {
     font-family: gotham-medium;
     font-size: 13px;
 }
+
+.footer {
+    width: 100%;
+    clear: both;
+    overflow: auto;
+}
+
+.footer span {
+    font-family: gotham-medium;
+    font-size: 13px;
+}
