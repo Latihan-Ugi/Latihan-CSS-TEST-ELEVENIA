@@ -1,0 +1,330 @@
+<html>
+    <head>
+        <title>Latihan 1</title>
+    </head>
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .popup {
+            display: none;
+            position: absolute;
+            top:15%;
+            left:30%;
+            width: 700px;
+            min-height: 450px;
+            z-index: 999;
+            background: #fff;
+            border-radius:10px;
+            box-shadow: 5px 5px 5px 5px #e6e6e6;
+        }
+        .popup-title {
+            padding: 10px 10 0 10px;
+        }
+        .exit a {
+            float: right;
+            color: #333333;
+            font-family: gotham-medium;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .img-content {
+            float: left;
+            width: 40%;
+        }
+
+        .img-content img {
+            width: 300px;
+            height: 300px;
+            margin-top: 60px;
+            object-fit: cover;
+        }
+
+        .img-content .label {
+            position: absolute;
+        }
+
+        .img-content .label h5 {
+            background: #fcd33f;
+            font-family: gotham-medium;
+            padding: 7px;
+            border-radius: 0px 50px 50px 0;
+        }
+
+        .deskripsi-img {
+            margin-top: 10px;
+            float: right;
+            width: 50%;
+        }
+
+        .deskripsi-img h3 {
+            font-family: gotham-medium;
+            margin-bottom: 5px;
+            margin-top: 5px;
+        }
+
+        .deskripsi-img .produk-deskripsi {
+            margin-top: 15px;
+        }
+
+        .deskripsi-img span {
+            font-family: gotham-light;
+            font-size: 18px;
+        }
+
+        .tabs {
+            margin-top: 15px;
+            border-bottom: 1px solid #e6e6e6;
+        }
+
+        .tabs-item {
+            padding: 0;
+            margin-right: 10px;
+            border: none;
+            outline: none;
+            font-family: gotham-medium;
+            font-size: 14px;
+        }
+
+        .tabs-item:hover {
+            cursor: pointer;
+        }
+
+        .active {
+            border-bottom: 2px solid #fcd33f !important;
+            z-index: 9999;
+        }
+
+        .tabs-content {
+            margin-top: 10px;
+        }
+
+        .tabs-content span img, .keterangan span img {
+            margin-right: 7px;
+        }
+
+        .tabs-content span, .keterangan span {
+            display: block;
+            font-size: 12px;
+            padding: 5px;
+        }
+
+        .keterangan {
+            margin-top: 30px;
+            border-top: 1px solid #e6e6e6;
+            border-bottom: 1px solid #e6e6e6;
+        }
+
+        .buy {
+            float: right;
+            margin-right: 30px;
+            margin-top: 40px;
+            background: #333333;
+            padding: 10px;
+            border-radius: 0px 20px 20px 0px;
+        }
+
+        .buy span {
+            font-size: 14px;
+            color:#fff;
+        }
+
+        .ranjang {
+            float: right;
+            margin-right: 0px;
+            margin-top: 40px;
+            background: #333333;
+            padding: 10px;
+            border-radius: 20px 0px 0px 20px;
+            border-right: 1px solid #666;
+        }
+
+        .ranjang img {
+            height: 17px;
+        }
+
+    </style>
+
+    <body>
+        <div class="wrap">
+            <div class="row">
+                <div class="content">
+                    <!-- Header -->
+                    <div class="header">
+                        <div class="header-left">
+                            <img src="images/logo.png">
+                        </div>
+                        <div class="header-right">
+                            <div class="form-group">
+                                <input type="text" placeholder="Pencarian.." class="cari" />
+                                <img src="images/search.png">
+                            </div>
+                        </div>
+
+                        <!-- Navbar -->
+                        <div class="navbar">
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Deals</a></li>
+                                <li><a href="#">Top 100	E-Mart</a></li>
+                                <li><a href="#">Mokado</a></li>
+                                <li><a href="#">Isi Ulang</a><li>
+                                <li><a href="#">Fashion</a></li>
+                                <li><a href="#">Promo HP</a></li>
+                                <li><a href="#">Brand A-Z</a></li>
+                                <li><a href="#">Promo</a></li>
+                                <li><a href="#">Benefit</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="content-isi">
+                        <!-- Sidebar -->
+                        <div class="menu"> 
+                                <ul>
+                                    <li><a href="#">Fashion</a></li>
+                                    <li><a href="#">Life Style</a></li>
+                                    <li><a href="#">Beauty & Healt</a></li>
+                                    <li><a href="#">Babies & Kids</a></li>
+                                    <li><a href="#">Home & Food</a></li>
+                                    <li><a href="#">Gadget & Komputer</a></li>
+                                    <li><a href="#">Elektronik</a></li>
+                                </ul>
+                        </div>
+
+                        <!-- Body -->
+                        <div class="body">
+                            <div class="produk">
+                                <div class="label">
+                                    <h5>BESTSELLER</h5>
+                                </div>
+                                <div class="spesifikasi-produk">
+                                    <img src="assets/image.jpg" class="img">
+                                </div>
+                                <div class="deskripsi">
+                                    <div class="title">
+                                        <h5>Bose SoundLink</h5>
+                                    </div>
+                                    <div class="meta-entry">
+                                        <span>Little speaker. Big goosebumps</span>
+                                    </div>
+                                </div>
+                                <div class="footer-produk">
+                                    <div class="look">
+                                        <span>
+                                            <!-- <img onmouseover="popup();" onmouseout="close_popup();" class="eye" src="assets/quicklook.svg"> -->
+                                            <img onclick="popup();" class="eye" src="assets/quicklook.svg">                                            
+                                        </span>
+                                    </div>
+                                    <div class="price">
+                                        <span>$ 199</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="popup" id="popup">
+                        <div class="popup-title">
+                            <span onclick="fadeOutEffect()" class="exit">
+                                <a href="javascripts:;" onclick="fadeOutEffect()">
+                                    X
+                                </a>
+                            </span>
+                        </div>
+                        <div class="popup-body">
+                            <div class="img-content">
+                                <div class="label">
+                                    <h5>BESTSELLER</h5>
+                                </div>
+                                <img src="assets/image.jpg" class="img">
+                            </div>
+                            <div class="deskripsi-img">
+                                <div class="produk-name">
+                                    <h3>Bose SoundLink</h3>
+                                    <h3>$ 199</h3>
+                                </div>
+                                <div class="produk-deskripsi">
+                                    <span>
+                                        Wireless earphones for music lovers who live to move
+                                    </span>
+                                    <div class="tabs">
+                                        <button class="tabs-item tabslink active" onclick="openTabs(event, 'Specification')">Specification</button>
+                                        <button class="tabs-item tabslink" onclick="openTabs(event, 'Features')">Features</button>
+                                    </div>
+                                    <div id="Specification" class="tabs-content">
+                                        <span><img src="assets/check.svg"/> Up to 8 hours playtime</span>
+                                        <span><img src="assets/check.svg"/> Wireless earphones</span>
+                                        <span><img src="assets/check.svg"/> Choose your colors</span>
+                                     </div>
+                                          
+                                    <div id="Features" class="tabs-content" style="display:none">
+                                        <span><img src="assets/check.svg"/> Bumpers for bumping</span>
+                                        <span><img src="assets/check.svg"/> All sound. No seam</span>
+                                        <span><img src="assets/check.svg"/> Grab and go</span>
+                                    </div>
+
+                                    <div class="keterangan">
+                                        <span><img src="assets/check.svg"/> Free shipping & returns + 2 year warranty</span>
+                                    </div>
+
+                                    <div class="buy">
+                                        <span>BUY NOW</span>
+                                    </div>
+                                    <div class="ranjang">
+                                        <img src="assets/cart.svg">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Footer -->
+                    <div class="footer">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+
+        function popup() {
+            console.log("Hallo");
+            var popup_style = document.getElementById("popup");
+            // var body_style = document.getElementsByTagName("BODY")[0];
+            popup_style.style.display = "block";
+            // body_style.style.background = "rgba(0, 0, 0, 0.5)";
+        }
+
+        function close_popup() {
+            console.log("Keluar");
+            var popup_style = document.getElementById("popup");
+            popup_style.style.display = "none";
+        }
+
+        function fadeOutEffect() {
+            var popup_style = document.getElementById("popup");
+            // var body_style = document.getElementsByTagName("BODY")[0];
+            popup_style.style.display = "none";
+            // body_style.style.background = "#f5f5f5";
+        }
+
+        function openTabs(evt,tabs) {
+            var i;
+            var x = document.getElementsByClassName("tabs-content");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none"; 
+            }
+
+            var tablinks = document.getElementsByClassName("tabslink");
+            for (i = 0; i < x.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+                // document.getElementsByClassName("tabslink")[i].classList.remove("active");
+            }
+
+            document.getElementById(tabs).style.display = "block"; 
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</html>
