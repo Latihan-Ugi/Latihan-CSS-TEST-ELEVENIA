@@ -90,7 +90,7 @@
             cursor: pointer;
         }
 
-        .active {
+        .tabs .active {
             border-bottom: 2px solid #fcd33f !important;
             z-index: 9999;
         }
@@ -110,15 +110,55 @@
         }
 
         .keterangan {
-            margin-top: 30px;
+            margin-top: 15px;
             border-top: 1px solid #e6e6e6;
             border-bottom: 1px solid #e6e6e6;
+        }
+        
+        .pilih-warna {
+            border-top:1px solid #e6e6e6;
+            margin-top: 10px;
+            padding-top: 10px;
+        }
+        
+        .pilih-warna span {
+            font-family: gotham-medium;
+            font-size: 14px;
+        }
+
+        .pilih-warna .warna {
+            height: 2px;
+            width: 2px;
+            /* background-color: #bbb; */
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .warna:hover {
+            cursor: pointer;
+        }
+
+        .pilih-warna .active {
+            background: url("assets/White_check.svg.png");
+            background-size: cover;
+        }
+
+        .warna-abu {
+            background-color: #bbb !important;
+        }
+
+        .warna-coklat {
+            background-color: #ffad1f !important;
+        }
+
+        .warna-item {
+            background-color: #000 !important;
         }
 
         .buy {
             float: right;
             margin-right: 30px;
-            margin-top: 40px;
+            margin-top: 20px;
             background: #333333;
             padding: 10px;
             border-radius: 0px 20px 20px 0px;
@@ -129,10 +169,18 @@
             color:#fff;
         }
 
+        /* .img-content .img-barang {
+            display: none;
+        }
+
+        .img-content .active {
+            display: block !important;
+        } */
+
         .ranjang {
             float: right;
             margin-right: 0px;
-            margin-top: 40px;
+            margin-top: 20px;
             background: #333333;
             padding: 10px;
             border-radius: 20px 0px 0px 20px;
@@ -237,7 +285,9 @@
                                 <div class="label">
                                     <h5>BESTSELLER</h5>
                                 </div>
-                                <img src="assets/image.jpg" class="img">
+                                <img src="assets/image.jpg" id="img1" class="img-barang img">
+                                <img src="assets/image2.jpg" id="img2" class="img-barang img" style="display:none;">
+                                <img src="assets/image3.jpg" id="img3" class="img-barang img" style="display:none;">
                             </div>
                             <div class="deskripsi-img">
                                 <div class="produk-name">
@@ -255,7 +305,14 @@
                                     <div id="Specification" class="tabs-content">
                                         <span><img src="assets/check.svg"/> Up to 8 hours playtime</span>
                                         <span><img src="assets/check.svg"/> Wireless earphones</span>
-                                        <span><img src="assets/check.svg"/> Choose your colors</span>
+                                        <span><img src="assets/check.svg"/> Powerfull sound</span>
+
+                                        <div class="pilih-warna">
+                                            <span style="padding-left:0px;">Choose your colors</span>
+                                            <span class="warna warna-abu active" onclick="changecolor(event, 'img1');"></span>
+                                            <span class="warna warna-item" onclick="changecolor(event, 'img2');"></span>
+                                            <span class="warna warna-coklat" onclick="changecolor(event, 'img3');"></span>
+                                        </div>
                                      </div>
                                           
                                     <div id="Features" class="tabs-content" style="display:none">
@@ -325,6 +382,22 @@
 
             document.getElementById(tabs).style.display = "block"; 
             evt.currentTarget.className += " active";
+        }
+
+        function changecolor(event,img){
+            
+            var color = document.getElementsByClassName("warna");
+            var gambar = document.getElementsByClassName("img-barang");
+            for(var a = 0; a < gambar.length;a++){
+                gambar[a].style.display = "none"; 
+            }
+            for (var i = 0; i < gambar.length; i++){
+                color[i].className = color[i].className.replace(" active", "");
+                // console.log(img[0]);
+            }
+            
+            document.getElementById(img).style.display = "block"; 
+            event.currentTarget.className += " active";
         }
     </script>
 </html>
