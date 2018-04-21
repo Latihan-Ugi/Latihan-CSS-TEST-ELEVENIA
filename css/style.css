@@ -54,6 +54,11 @@ body {
     overflow: auto;
 }
 
+.navbar ul {
+    margin-top:30px;
+    margin-left: 20px;
+}
+
 .navbar ul li {
     display: inline;
     margin-right: 10px;
@@ -100,23 +105,24 @@ body {
     background: #fff;
     box-shadow: 1px 1px 1px #e8e8e8;
     border-radius: 10px;
-    max-width: 250px;
-    min-height: 330px;
+    max-width: 300px;
+    min-height: 440px;
     clear: both;
     position: relative;
     margin: 10px 15px 10px 15px; 
 }
 
 .spesifikasi-produk {
-    max-width: 250px;
+    max-width: 300px;
     max-height: 310;
     overflow: hidden;
 }
 
-.img {
+.spesifikasi-produk .img {
     margin-top:20px;
-    max-width: 100%;
-    height: auto;
+    width: 300px;
+    height: 270px;
+    object-fit: cover;
     display: block;
 }
 
@@ -168,7 +174,7 @@ body {
     right: 86px;
     margin-top: 25px;
     padding: 9px;
-    border-radius: 30px 0px 0px 30px;
+    border-radius: 30px 0px 00px 30px;
 }
 
 .footer-produk .price {
